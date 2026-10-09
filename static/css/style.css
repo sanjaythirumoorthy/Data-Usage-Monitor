@@ -1,0 +1,377 @@
+/* ==========================================================================
+   Daily Data Usage Monitoring & Analytics - Modern Data Science Dashboard CSS
+   ========================================================================== */
+
+:root {
+    --primary-blue: #2563eb;
+    --primary-blue-hover: #1d4ed8;
+    --primary-blue-light: #eff6ff;
+    --purple-accent: #7c3aed;
+    --purple-light: #f5f3ff;
+    --success-green: #10b981;
+    --warning-yellow: #f59e0b;
+    --danger-red: #ef4444;
+    --card-radius: 14px;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #f8fafc;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+[data-bs-theme="dark"] body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+/* Typography Helpers */
+.fs-xs {
+    font-size: 0.75rem;
+}
+
+.fs-sm {
+    font-size: 0.875rem;
+}
+
+.fw-extrabold {
+    font-weight: 800;
+}
+
+.tracking-tight {
+    letter-spacing: -0.025em;
+}
+
+/* Navbar Custom Styling */
+.app-navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .app-navbar {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-color: #1e293b !important;
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.brand-title {
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+[data-bs-theme="dark"] .brand-title {
+    color: #f8fafc;
+}
+
+.navbar .nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--primary-blue);
+    background-color: var(--primary-blue-light);
+}
+
+[data-bs-theme="dark"] .navbar .nav-link:hover,
+[data-bs-theme="dark"] .navbar .nav-link.active {
+    background-color: #1e293b;
+    color: #60a5fa;
+}
+
+/* Card Styling */
+.card {
+    border-radius: var(--card-radius);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-bs-theme="light"] .card {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* KPI Cards */
+.kpi-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.kpi-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.kpi-value {
+    font-size: 2.1rem;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.icon-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* Purple Accents */
+.bg-purple-subtle {
+    background-color: #f3e8ff !important;
+}
+
+.text-purple {
+    color: #9333ea !important;
+}
+
+[data-bs-theme="dark"] .bg-purple-subtle {
+    background-color: #3b0764 !important;
+}
+
+[data-bs-theme="dark"] .text-purple {
+    color: #c084fc !important;
+}
+
+/* Quality Card */
+.quality-card {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(59, 130, 246, 0.02));
+    border: 1px solid rgba(37, 99, 235, 0.12) !important;
+}
+
+[data-bs-theme="dark"] .quality-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    border-color: #334155 !important;
+}
+
+.quality-badge-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.quality-stat {
+    min-width: 90px;
+}
+
+/* Alert Notification Card */
+.alert-card-warning {
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border: 1px solid #fde68a !important;
+    color: #92400e;
+}
+
+[data-bs-theme="dark"] .alert-card-warning {
+    background: linear-gradient(135deg, #451a03, #291505);
+    border-color: #78350f !important;
+    color: #fde68a;
+}
+
+.alert-card-success {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1px solid #bbf7d0 !important;
+    color: #166534;
+}
+
+[data-bs-theme="dark"] .alert-card-success {
+    background: linear-gradient(135deg, #052e16, #022010);
+    border-color: #14532d !important;
+    color: #86efac;
+}
+
+/* Limit preset buttons */
+.btn-xs {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.75rem;
+    border-radius: 6px;
+}
+
+.limit-preset-btn.active {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border-color: var(--primary-blue);
+}
+
+/* Dropzone */
+.upload-dropzone {
+    background-color: #f8fafc;
+    border-color: #cbd5e1 !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.dragover {
+    background-color: #eff6ff;
+    border-color: var(--primary-blue) !important;
+}
+
+[data-bs-theme="dark"] .upload-dropzone {
+    background-color: #0f172a;
+    border-color: #334155 !important;
+}
+
+[data-bs-theme="dark"] .upload-dropzone:hover,
+[data-bs-theme="dark"] .upload-dropzone.dragover {
+    background-color: #1e293b;
+    border-color: #60a5fa !important;
+}
+
+/* Insights list */
+.insights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.insight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    border-left: 3px solid var(--primary-blue);
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+[data-bs-theme="dark"] .insight-item {
+    background-color: #0f172a;
+}
+
+.insight-item i {
+    margin-top: 0.2rem;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* Status Badges */
+.badge-status-low {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    font-weight: 600;
+}
+
+.badge-status-normal {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-weight: 600;
+}
+
+.badge-status-high {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    font-weight: 600;
+}
+
+[data-bs-theme="dark"] .badge-status-low {
+    background-color: #052e16;
+    color: #86efac;
+    border-color: #14532d;
+}
+
+[data-bs-theme="dark"] .badge-status-normal {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+    border-color: #1d4ed8;
+}
+
+[data-bs-theme="dark"] .badge-status-high {
+    background-color: #450a0a;
+    color: #fca5a5;
+    border-color: #7f1d1d;
+}
+
+/* Table Enhancements */
+.table th {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table td {
+    font-size: 0.875rem;
+}
+
+.high-usage-scroll::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.high-usage-scroll::-webkit-scrollbar-thumb,
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+[data-bs-theme="dark"] .high-usage-scroll::-webkit-scrollbar-thumb,
+[data-bs-theme="dark"] .table-responsive::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+/* Chart Canvas Responsiveness */
+.chart-card {
+    overflow: hidden;
+}
+
+.chart-container {
+    min-height: 250px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Transitions */
+* {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
